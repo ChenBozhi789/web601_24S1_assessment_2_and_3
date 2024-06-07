@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cde9ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;  
+}
+
+.my-signup-page {
+    background-color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    max-width: 600px; /* 设置最大宽度 */
+    width: 100%; /* 使其占据父容器的100%宽度 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 8px;
+}
+
+.my-signup-page h1,
+.my-signup-page h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+button {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+}
+
+.container {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.container button:hover {
+    background-color: #0056b3;
+}
+
+.container p {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.container p a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.container p a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="SignUp.css">
+</head>
+<body>
+    <div class="container my-signup-page">
+        
+        <div class="row">
+            <div class="col">
+                <h1>Sign up</h1>
+                <h2>Sign up for (Project)</h2>
+            </div>
+        </div>
+        
+        <form id="signup-form">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Username*</label>
+                <input type="username" class="form-control" id="username" minlength="8" maxlength="20" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email*</label>
+                <input type="email" class="form-control" id="email" minlength="10" maxlength="50" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Number*</label>
+                <input type="number" class="form-control" id="number" minlength="8" maxlength="20" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Password*</label>
+                <input type="password" class="form-control" id="password" minlength="8" maxlength="20" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Re-type Password*</label>
+                <input type="password" class="form-control" id="retype-password" minlength="8" maxlength="20" required>
+            </div>
+            
+            <!-- Button trigger modal -->
+            <button type="submit" class="btn btn-primary" id="registerButton">Register</button>
+            
+        </form>
+
+        <p class="text-center mt-3">Already have an account? <a href="http://127.0.0.1:5500/src/F.E/Login/Login.html">Log in</a></p>
+
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Conguadulations! You have created account successfully!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Caution Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Warnning</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    The information you entered is incorrect, please check and try again.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/js/bootstrap.bundle.min.js"></script>
+    <script src="SignUp.js"></script>
+</body>
+</html>

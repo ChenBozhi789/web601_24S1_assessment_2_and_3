@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Note</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Add.css">
+</head>
+<body>
+    <div class="container add-container">
+        <div class="text-center">
+            <h1>Create Note</h1>
+            <h2>Start creating your note now!</h2>
+        </div>
+
+        <form id="add-form">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Note Title</label>
+                <input type="text" class="form-control" id="note-title" name="note-title" placeholder="Please enter title" minlength="3" maxlength="50" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Note material</label>
+                <textarea class="form-control" id="note-content" name="note-content"  rows="3" minlength="10" maxlength="500" required></textarea>
+            </div>
+
+            <!-- Button trigger modal -->
+            <button type="submit" class="btn btn-primary" id="confirmButton">Confirm</button>
+        </form>
+    </div>
+
+    <!-- Add Modal -->
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Conguatulations! Add note successfully!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/js/bootstrap.bundle.min.js"></script>
+    <script src="Add.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 让容器高度占满视口 */
+    width: 100vw; /* 让容器宽度占满视口 */
+    background-color: #cde9ff; /* 容器背景颜色 */
+    border-radius: 10px; /* 圆角边框 */
+}
+
+.spinner-border {
+    width: 5rem; /* 自定义宽度 */
+    height: 5rem; /* 自定义高度 */
+    border-width: 0.5em; /* 自定义边框宽度 */
+}
+
+.loading-text {
+    margin-top: 20px;
+    font-size: 2rem;
+    color: #007BFF;
+}

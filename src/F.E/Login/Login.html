@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+    <div class="container my-login-page">
+        <div class="text-center">
+            <h1>Welcome</h1>
+            <h2>Login to continue</h2>
+        </div>
+        
+        <form id="login-form">
+            <div class="mb-3">
+                <!-- Input Email -->
+                <label for="inputPassword" class="form-label">Email*</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Please enter your email..." minlength="8" maxlength="20" required>
+            </div>
+
+            <div class="mb-3">
+                <!-- Input Password -->
+                <label for="inputPassword" class="form-label">Password*</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Please enter your password..." minlength="8" maxlength="20" required>
+            </div>
+
+            <!-- Confirm Button -->
+            <button type="submit" class="btn btn-primary" id="confirmButton">Confirm</button>
+        </form>
+
+        <!-- Just a reminder -->
+        <p>Don't have an account? <a href="http://127.0.0.1:5500/src/F.E/SignUp/SignUp.html">Sign up</a></p>
+
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Conguadulations! You have logged in successfully!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Caution Modal -->
+    <div class="modal fade" id="cautionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Warnning</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    The information you entered is incorrect, Please check and try again.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/js/bootstrap.bundle.min.js"></script>
+    <script src="Login.js"></script>
+</body>
+</html>
