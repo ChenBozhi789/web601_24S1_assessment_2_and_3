@@ -1,7 +1,7 @@
 const express = require('express');
 //
 const router = express.Router(); 
-//
+// Import note schema
 const Note = require('../models/Note')
 
 // Create Note (POST request)
@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
   });
 
   try {
-    // 返回 Promise 对象并存储到 newNote 变量中
+    // Use newnote.save() function to save note data to database
     const newNote = await newnote.save();
     res.status(201).json(newNote);
   } catch (err) {
@@ -33,9 +33,9 @@ router.get('/', async (req, res) => {
 // Check Note (GET request)
 router.get('/:id', async (req, res) => {
   try {
-    const note = await Note.findById(req.params.id);
-    if (note) {
-      res.json(note);
+    const notes = await Note.findById(req.params.id);
+    if (notes) {
+      res.json(notes);
     } else {
       res.status(404).json({ message: 'Note not found' });
     }
@@ -44,7 +44,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Edit Note (PUT request)
+// Edit Note (PUT request) 未测试
 router.put('/:id', async (req, res) => {
   try {
     const note = await Note.findById(req.params.id);
@@ -61,12 +61,11 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// Delete Note (DELETE request)
+// Delete Note
 router.delete('/:id', async (req, res) => {
   try {
-    const note = await Note.findById(req.params.id);
-    if (note) {
-      await note.remove();
+    const note = await Note.deleteOne({_id: req.params.id});
+    if (note.deletedCount === 1) {
       res.status(204).send();
     } else {
       res.status(404).json({ message: 'Note not found' });
@@ -75,5 +74,6 @@ router.delete('/:id', async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+
 
 module.exports = router;
