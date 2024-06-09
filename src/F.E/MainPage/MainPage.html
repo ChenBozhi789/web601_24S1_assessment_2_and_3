@@ -4,21 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
     <link rel="stylesheet" href="MainPage.css">
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <button class="nav-button" id="createNote">Create Note</button>
-            <button class="nav-button" id="editNote">Edit Note</button>
-            <button class="nav-button" id="deleteNote">Delete Note</button>
+    <div class="container my-operate-page">
+        <div class="text-center">
+            <h1>Welcome</h1>
+            <p>You can select and operate note here!</p>
         </div>
-        <div class="content">
-            <iframe id="contentFrame" src="welcome.html" frameborder="0"></iframe>
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Create Time</th>
+                <th scope="col">Select</th>
+              </tr>
+            </thead>
+
+            <tbody> 
+
+            </tbody>
+        </table>
+
+        <div class="button-group">
+            <!-- Create, Edit, and Delete button -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal" id="createButton">Create</button>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal" id="editButton">Edit</button>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" id="deleteButton">Delete</button>
         </div>
     </div>
+    
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Alert</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Are you sure delete this note?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Yes, I have confirmed.</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <script src="script.js"></script>
+    <script src="../public/js/bootstrap.bundle.min.js"></script>
+    <script src="MainPage.js"></script>
 </body>
 </html>

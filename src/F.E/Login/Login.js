@@ -1,5 +1,5 @@
 document.getElementById('login-form').addEventListener('submit', function(event) {
-  // 防止表单默认提交行为
+  // Prevent default submit event
   event.preventDefault();
   
   // Get element with id
@@ -13,7 +13,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
   // Initial variable valid 'true'
   let valid = true;
 
-  // 与 MongoDB 已输入数据进行对比  
+  // Check whether the length of the user input data meets the specification
   if (inputEmail.value.trim() === '' || inputEmail.value.length < 8 || inputEmail.value.length > 20) {
     inputEmail.classList.add('is-invalid');
     valid = false;

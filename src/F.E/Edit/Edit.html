@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Note</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Edit.css">
+</head>
+<body>
+    <div class="container edit-container">
+        <div class="text-center">
+            <h1>Edit Note</h1>
+        </div>  
+
+        <form id="edit-form">
+            <div class="mb-3">
+                <label for="noteId" class="form-label">Note ID</label>
+                <input type="text" class="form-control" id="noteId" name="noteId" placeholder="This is note id, you can't change it." readonly>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Note Content</label>
+                <textarea class="form-control" id="note-content" name="note-content"  rows="3" minlength="10" maxlength="500" required></textarea>
+            </div>
+
+            <!-- Button trigger modal -->
+            <button type="submit" class="btn btn-primary" id="confirmButton">Confirm</button>
+        </form>
+    </div>
+
+    <script src="../public/js/bootstrap.bundle.min.js"></script>
+    <script src="Edit.js"></script>
+</body>
+</html>

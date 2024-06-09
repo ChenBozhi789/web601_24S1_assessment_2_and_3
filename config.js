@@ -1,1 +1,2 @@
+// This is the MongoDB configuration information
 module.exports = { db: 'mongodb+srv://myfirsttester:faOJJRNbfrbznpLl@web601a2.gssl7mn.mongodb.net/noteDatabase?retryWrites=true&w=majority&appName=web601a2' }

@@ -13,16 +13,16 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* 让容器高度占满视口 */
-    width: 100vw; /* 让容器宽度占满视口 */
-    background-color: #cde9ff; /* 容器背景颜色 */
-    border-radius: 10px; /* 圆角边框 */
+    height: 100vh; 
+    width: 100vw;
+    background-color: #cde9ff;
+    border-radius: 10px;
 }
 
 .spinner-border {
-    width: 5rem; /* 自定义宽度 */
-    height: 5rem; /* 自定义高度 */
-    border-width: 0.5em; /* 自定义边框宽度 */
+    width: 5rem;
+    height: 5rem;
+    border-width: 0.5em;
 }
 
 .loading-text {

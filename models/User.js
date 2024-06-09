@@ -1,7 +1,9 @@
-// Define User data Schema
+// Import 'mongoose'
 const mongoose = require('mongoose');
+// Define Schema 
 const Schema = mongoose.Schema;
 
+// Define user Schema
 const userSchema = new Schema({
   username: {
     type: String,
@@ -28,8 +30,9 @@ const userSchema = new Schema({
   }]
 });
 
+// Create index for username and email
 userSchema.index({ username: 1 }, { unique: true });
 userSchema.index({ email: 1 }, { unique: true });
 
-
+// Exports user model
 module.exports = mongoose.model('User', userSchema);

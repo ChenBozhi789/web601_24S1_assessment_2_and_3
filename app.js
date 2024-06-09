@@ -22,21 +22,23 @@ mongoose.connect(config.db)
   .catch(err => console.log(err));
 
 /* Use Middleware */
-app.use(bodyParser.json()); // 解析 JSON 数据
-app.use(bodyParser.urlencoded({ extended: true })); // 解析URL编码数据
-app.use(cors()); // 允许跨域请求
-// app.use(morgan('dev')); // Configure Middleware 'morgan'
-
-// Note Router
-app.use('/notes', noteRouter);
-// User Router
-app.use('/users', userRouter);
-
+// Analysis JSON data
+app.use(bodyParser.json());
+// Analysis information
+app.use(bodyParser.urlencoded({ extended: true }));
+// Allow cross-domain requests
+app.use(cors()); 
 // Configure Middleware 'manage error handling'
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Server have something broke!');
 });
+
+/* Routes */
+// Note Router
+app.use('/notes', noteRouter);
+// User Router
+app.use('/users', userRouter);
 
 // Start Server
 app.listen(port, () => {

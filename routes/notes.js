@@ -1,5 +1,6 @@
+// Import the express framework
 const express = require('express');
-//
+// Create the Express router object
 const router = express.Router(); 
 // Import note schema
 const Note = require('../models/Note')
@@ -30,7 +31,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Check Note (GET request)
+// Check specific Note (GET request)
 router.get('/:id', async (req, res) => {
   try {
     const notes = await Note.findById(req.params.id);
@@ -44,7 +45,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Edit Note (PUT request) 未测试
+// Edit Note (PUT request) 
 router.put('/:id', async (req, res) => {
   try {
     const note = await Note.findById(req.params.id);
@@ -75,5 +76,5 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-
+// Exports router module
 module.exports = router;

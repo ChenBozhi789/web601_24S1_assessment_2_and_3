@@ -34,22 +34,6 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
-// // Create Note (POST request)
-// router.post('/', async (req, res) => {
-//     const note = new Note({
-//       title: req.body.title,
-//       content: req.body.content,
-//       // Connect User
-//       user: req.body.userId
-//     });
-  
-//     try {
-//       const newNote = await note.save();
-//       res.status(201).json(newNote);
-//     } catch (err) {
-//       res.status(400).json({ message: err.message });
-//     }
-//   });
 
 // Delete User (DELETE request)
 router.delete('/:id', async (req, res) => {
@@ -67,4 +51,5 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// Exports router module
 module.exports = router;
