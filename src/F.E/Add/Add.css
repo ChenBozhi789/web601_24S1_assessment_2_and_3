@@ -55,3 +55,7 @@ p a {
 p a:hover {
     text-decoration: underline;
 }
+
+#logoutButton {
+    margin-top: 10px;
+}

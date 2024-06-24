@@ -4,16 +4,20 @@ const express = require('express');
 const router = express.Router(); 
 // Import note schema
 const Note = require('../models/Note')
+// Import middleware verifyToken
+const verifyToken = require('../models/verifyToken');
 
 // Create Note (POST request)
-router.post('/', async (req, res) => {
+router.post('/', verifyToken, async (req, res) => {
   const newnote = new Note({
     title: req.body.title,
-    content: req.body.content
+    content: req.body.content,
+    // Use the decoded user id of the JWT
+    user: req.body._id
   });
 
   try {
-    // Use newnote.save() function to save note data to database
+    // Use newNote.save() function to save note data to database
     const newNote = await newnote.save();
     res.status(201).json(newNote);
   } catch (err) {
@@ -22,9 +26,9 @@ router.post('/', async (req, res) => {
 });
 
 // Check All Note (GET request)
-router.get('/', async (req, res) => {
+router.get('/', verifyToken, async (req, res) => {
   try {
-    const notes = await Note.find();
+    const notes = await Note.find({ user: req.user._id});
     res.json(notes);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -46,9 +50,9 @@ router.get('/:id', async (req, res) => {
 });
 
 // Edit Note (PUT request) 
-router.put('/:id', async (req, res) => {
+router.put('/:id', verifyToken, async (req, res) => {
   try {
-    const note = await Note.findById(req.params.id);
+    const note = await Note.findById({id: req.params.id, user: req.user._id});
     if (note) {
       note.title = req.body.title || note.title;
       note.content = req.body.content || note.content;
@@ -63,9 +67,9 @@ router.put('/:id', async (req, res) => {
 });
 
 // Delete Note
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', verifyToken, async (req, res) => {
   try {
-    const note = await Note.deleteOne({_id: req.params.id});
+    const note = await Note.deleteOne({_id: req.params.id, user: req.user._id});
     if (note.deletedCount === 1) {
       res.status(204).send();
     } else {

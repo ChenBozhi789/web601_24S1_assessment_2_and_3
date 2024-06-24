@@ -1,4 +1,5 @@
 document.getElementById('add-form').addEventListener('submit', async function(event) {
+    const token = localStorage.getItem('token');
     // Preventing the default submit event
     event.preventDefault();
 
@@ -53,7 +54,7 @@ document.getElementById('add-form').addEventListener('submit', async function(ev
         catch (err) {
                 alert('Something wrong:' + err.message);
             }
-        }
+    }
 });
 
 // Listen for modal window closing events

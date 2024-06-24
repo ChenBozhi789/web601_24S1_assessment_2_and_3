@@ -6,11 +6,12 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 // Import middleware 'mongoose'
 const mongoose = require('mongoose');
+// Import middleware bcrypt
+const bcrypt = require("bcrypt");
+
 const noteRouter = require('./routes/notes');
 const userRouter = require('./routes/user');
 const config = require('./config');
-// // Import morgan
-// const morgan = require('morgan');
 
 // Create express instance
 const app = express();
